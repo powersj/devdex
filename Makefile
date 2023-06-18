@@ -1,7 +1,7 @@
 .DEFAULT_TARGET: all
 
 .PHONY: all
-all: clean lint test build run
+all: build run
 
 .PHONY: build
 build:
