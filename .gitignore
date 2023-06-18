@@ -1,0 +1,11 @@
+.DS_Store
+
+build/bin
+
+frontend/.npmrc
+frontend/.svelte-kit
+frontend/build/*
+frontend/dist
+frontend/node_modules
+frontend/wailsjs
+frontend/src/lib/wailsjs

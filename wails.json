@@ -1,0 +1,13 @@
+{
+  "name": "devdex",
+  "outputfilename": "devdex",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build --base=./",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "wailsjsdir": "./frontend/src/lib",
+  "author": {
+    "name": "Josh Powers",
+    "email": "powersj@fastmail.com"
+  }
+}
