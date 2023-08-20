@@ -19,5 +19,8 @@
 
 <ErrorBox text={errorText} />
 
-<Copy text={inputText} />
+<div class="flex md:flex md:flex-grow flex-row justify-end space-x-1">
+	<Copy text={inputText} />
+</div>
+
 <CodeMirror bind:value={inputText} />

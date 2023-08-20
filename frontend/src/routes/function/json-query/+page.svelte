@@ -36,20 +36,37 @@
 <div class="grid grid-cols-3 gap-3">
     <div>
         Input
-        <Button text="minify" on:click={minify} />
-        <Button text="beautify" on:click={beautify} />
+        <div class="flex md:flex md:flex-grow flex-row justify-end space-x-1">
+            <Button text="minify" on:click={minify} />
+            <Button text="beautify" on:click={beautify} />
+        </div>
     </div>
     <div>Query</div>
     <div>
         Output
-        <Button text="minify" on:click={minify} />
-        <Button text="beautify" on:click={beautify} />
-        <Copy text={resultText} />
+        <div class="flex md:flex md:flex-grow flex-row justify-end space-x-1">
+            <Button text="minify" on:click={minify} />
+            <Button text="beautify" on:click={beautify} />
+            <Copy text={resultText} />
+        </div>
     </div>
 </div>
 
 <div class="grid grid-cols-3 gap-3">
-    <CodeMirror bind:value={inputText} lang={json()} />
-    <CodeMirror bind:value={queryText} lang={json()} />
-    <CodeMirror bind:value={resultText} lang={json()} />
+    <CodeMirror bind:value={inputText} lang={json()}
+    styles={{
+		"&": {height: "100vh"},
+		".cm-scroller": {overflow: "auto"}
+	}}
+    />
+    <CodeMirror bind:value={queryText} lang={json()}
+    styles={{
+		"&": {height: "100vh"},
+		".cm-scroller": {overflow: "auto"}
+	}}/>
+    <CodeMirror bind:value={resultText} lang={json()}
+    styles={{
+		"&": {height: "100vh"},
+		".cm-scroller": {overflow: "auto"}
+	}} />
 </div>

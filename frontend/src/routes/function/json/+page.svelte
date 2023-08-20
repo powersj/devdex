@@ -51,9 +51,17 @@
 
 <ErrorBox text={errorText} />
 
-<Button text="beautify" on:click={beautify} />
-<Button text="minify" on:click={minify} />
+<div class="flex md:flex md:flex-grow flex-row justify-end space-x-1">
+	<Button text="beautify" on:click={beautify} />
+	<Button text="minify" on:click={minify} />
+	<Copy text={inputText} />
+</div>
 
-<Copy text={inputText} />
-
-<CodeMirror bind:value={inputText} lang={json()} />
+<CodeMirror
+	bind:value={inputText}
+	lang={json()}
+	styles={{
+		"&": {height: "100vh"},
+		".cm-scroller": {overflow: "auto"}
+	}}
+/>
