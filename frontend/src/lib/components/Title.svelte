@@ -3,5 +3,5 @@
     export let description = '';
 </script>
 
-<h1 class="text-2xl">{text}</h1>
-<p>{description}</p>
+<h1 class="text-2xl mb-3">{text}</h1>
+<p class="mb3">{description}</p>

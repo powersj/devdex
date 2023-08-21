@@ -1,45 +1,40 @@
 <script lang="ts">
-	import { Beautify, Minify } from "$lib/wailsjs/go/main/App.js";
-	import { json } from "@codemirror/lang-json";
 	import CodeMirror from "svelte-codemirror-editor";
+	import { json } from "@codemirror/lang-json";
+
+	import { FormatJSON, MinifyJSON } from "$lib/wailsjs/go/main/App.js";
 
 	import Title from '$lib/components/Title.svelte';
 	import Button from '$lib/components/Button.svelte';
-    import ErrorBox from '$lib/components/ErrorBox.svelte';
+	import ErrorBox from '$lib/components/ErrorBox.svelte';
 	import Copy from '$lib/components/Copy.svelte';
 
     let errorText = "";
     let inputText = "";
 
-    function beautify() {
+    function format() {
 		try {
 			JSON.parse(inputText)
 		} catch(e: any) {
-			errorText = 'Error parsing: ' + e.message
+			errorText = 'invalid JSON: ' + e.message
 		}
 
-		Beautify(inputText).then((result: string) => {
+		FormatJSON(inputText).then((result: string) => {
 			inputText = result
 			errorText = ""
-		}).catch((e: any) => errorText = 'Error parsing: ' + e.message);
+		}).catch((e: any) => errorText = e);
     }
     function minify() {
 		try {
 			JSON.parse(inputText)
 		} catch(e: any) {
-			errorText = 'Error parsing: ' + e.message
+			errorText = 'invalid JSON: ' + e.message
 		}
 
-        Minify(inputText).then((result: string) => {
+        MinifyJSON(inputText).then((result: string) => {
             inputText = result
 			errorText = ""
         }).catch((e: any) => errorText = e);
-    }
-    function treeView() {
-        errorText = "tree view is not implemented";
-    }
-	function stringify() {
-        errorText = "stringify is not implemented";
     }
 </script>
 
@@ -52,7 +47,7 @@
 <ErrorBox text={errorText} />
 
 <div class="flex md:flex md:flex-grow flex-row justify-end space-x-1">
-	<Button text="beautify" on:click={beautify} />
+	<Button text="format" on:click={format} />
 	<Button text="minify" on:click={minify} />
 	<Copy text={inputText} />
 </div>

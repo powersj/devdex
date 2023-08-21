@@ -39,31 +39,39 @@
         <ul class="flex flex-col py-4 space-y-1">
           <li class="px-5">
             <div class="flex flex-row items-center h-8">
-              <div class="font-light tracking-wide text-gray-500">devdex</div>
+              <div class="font-light items-center tracking-wide text-gray-500">devdex</div>
             </div>
           </li>
 
+          <!--
           <Item text="Home" icon={IconHome} href="/" />
+          -->
 
           <Header text="Configuration" />
           <Item text="JSON" icon={IconCodeDots} href="/function/json" />
           <Item text="JSON Query" icon={IconCodeAsterix} href="/function/json-query" />
           <Item text="TOML" icon={IconBracketsContain} href="/function/toml" />
           <Item text="YAML" icon={IconFileSettings} href="/function/yaml" />
+          <!--
           <Item text="XML" icon={IconCode} href="/function/xml" />
           <Item text="CSV" icon={IconCsv} href="/function/csv" />
           <Item text="SQL" icon={IconDatabaseSearch} href="/function/sql" />
+          -->
+
 
           <Header text="Strings" />
-          <Item text="Modify" icon={IconTypography} href="/function/string" />
           <Item text="Hash Generator" icon={IconHash} href="/function/hash" />
+          <!--
+          <Item text="Modify" icon={IconTypography} href="/function/string" />
           <Item text="HTML Encode/Decode" icon={IconSourceCode} href="/function/html" />
           <Item text="URL Encode/Decode" icon={IconForms} href="/function/url" />
           <Item text="Diff" icon={IconFileDiff} href="/function/diff" />
           <Item text="Regex" icon={IconRegex} href="/function/regex" />
+          -->
 
           <Header text="Tools" />
           <Item text="Base Conversion" icon={IconBinary} href="/function/base" />
+          <!--
           <Item text="Certificate" icon={IconCertificate} href="/function/certificates" />
           <Item text="Passwords" icon={IconKey} href="/function/passwords" />
           <Item text="Crontab" icon={IconClock} href="/function/crontab" />
@@ -74,11 +82,13 @@
           <Item text="Timestamp" icon={IconClock} href="/function/timestamp" />
           <Item text="UUID" icon={IconCpu2} href="/function/uuid" />
           <Item text="QR Code" icon={IconQrcode} href="/function/qrcode" />
+          -->
 
+          <!--
           <Header text="Reference" />
           <Item text="Algorithms" icon={IconAdjustmentsSearch} href="/function/algorithms" />
           <Item text="Data Structures" icon={IconBinaryTree} href="/function/data_structures" />
-
+          -->
         </ul>
       </div>
     </div>
